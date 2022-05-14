@@ -60,7 +60,10 @@ private:
 	
 	void AimWithPlayerController(const AActor* InSourceActor, FCollisionQueryParams Params, const FVector& TraceStart, FVector& OutTraceEnd, bool bIgnorePitch = false) const;
 
-	//Calculate the points within the AbilityRange from the camera direction, relative to the AbilityCenter.
+	/*	
+	Calculate the points within the AbilityRange from the camera direction, relative to the AbilityCenter.
+	help: https://raw.githubusercontent.com/handsomeXZ/UE5_GAS/main/Source/GASTest/Private/GAS/ClipCameraRayToAbilityRange.png
+	*/
 	bool ClipCameraRayToAbilityRange(FVector CameraLocation, FVector CameraDirection, FVector AbilityCenter, float AbilityRange, FVector& ClippedPosition) const;
 
 
