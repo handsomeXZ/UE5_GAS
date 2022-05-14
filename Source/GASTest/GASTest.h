@@ -5,6 +5,9 @@
 #include "CoreMinimal.h"
 
 
+#define COLLISION_PROJECTILE					ECollisionChannel::ECC_GameTraceChannel1
+#define COLLISION_ABILITY						ECollisionChannel::ECC_GameTraceChannel2
+#define COLLISION_INTERACTABLE					ECollisionChannel::ECC_GameTraceChannel3
 
 UENUM(BlueprintType)
 enum class EGSAbilityInputID : uint8

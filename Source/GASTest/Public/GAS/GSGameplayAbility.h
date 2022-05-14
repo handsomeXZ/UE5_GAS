@@ -1,11 +1,11 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// copyright JTJ
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "Abilities/GameplayAbility.h"
 #include "../../GASTest.h"
-#include "../../../../../../UE5Preview/UE_5.0/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Public/Abilities/GameplayAbilityTypes.h"
+#include "Abilities/GameplayAbilityTypes.h"
 #include "GSGameplayAbility.generated.h"
 
 /**
@@ -28,7 +28,11 @@ public:
 	// If true, then the ability is automatically activated at the time of grant
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Ability")
 	bool bActivateAbilityOnGranted;
-
+	// Epic's comment: Projects may want to initiate passives or do other "BeginPlay" type of logic here.
 	virtual void OnAvatarSet(const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilitySpec& Spec) override;
+
+	// Sends TargetData from the client to the Server and creates a new Prediction Window
+	UFUNCTION(BlueprintCallable, Category = "Ability")
+	virtual void SendTargetDataToServer(const FGameplayAbilityTargetDataHandle& TargetData);
 
 };
